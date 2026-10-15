@@ -1,0 +1,25 @@
+[project]
+name = "residencial-aurora"
+version = "1.0.0"
+description = "Assistente virtual do Residencial Aurora com Google ADK, exposto por uma API FastAPI"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk==2.11.0",
+    "fastapi==0.141.1",
+    "uvicorn==0.54.0",
+    "aiosqlite==0.22.1",
+    "python-dotenv==1.2.4",
+]
+
+[project.scripts]
+aurora-api = "aurora.api:main"
+aurora-restaurar = "aurora.restaurar:main"
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "aurora"
+module-root = ""
